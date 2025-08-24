@@ -7,10 +7,10 @@ from fastapi import FastAPI, Query
 from fastapi.responses import JSONResponse, HTMLResponse
 
 # ------------------ CONFIG ------------------
-MAP_KEY = "2ecd542c57f785d3df0e138ffc6e98e4"  # Replace with your NASA FIRMS API key
+MAP_KEY = os.getenv("FIRMS_API_KEY", "2ecd542c57f785d3df0e138ffc6e98e4")
 COUNTRY = "India"
 DAYS = 3
-SATELLITE = "VIIRS_NOAA20_NRT"
+SATELLITE = os.getenv("SATELLITE", "VIIRS_NOAA20_NRT")
 
 # BBox (India roughly) -> change if needed
 lon_min, lat_min, lon_max, lat_max = 68, 6, 97, 37
@@ -134,9 +134,16 @@ def get_fire_stats(days: int = Query(DAYS, ge=1, le=10)):
 @app.get("/fires/map")
 def get_fire_map(days: int = Query(DAYS, ge=1, le=10)):
     df = fetch_firms_bbox(MAP_KEY, SATELLITE, (lon_min, lat_min, lon_max, lat_max), days)
-    result, m = make_map(df)
-    return JSONResponse(content=m), HTMLResponse(content=m.get_root().render())
+    _, m = make_map(df)
+    return HTMLResponse(content=m.get_root().render())
+
+@app.get("/fires/data")
+def get_fire_data(days: int = Query(DAYS, ge=1, le=10)):
+    df = fetch_firms_bbox(MAP_KEY, SATELLITE, (lon_min, lat_min, lon_max, lat_max), days)
+    result, _ = make_map(df)
+    return JSONResponse(content=result)
 
 if __name__ == "__main__":
     import uvicorn
-    uvicorn.run(app, host="127.0.0.1", port=5476)
+    port = int(os.getenv("PORT", 5000))
+    uvicorn.run(app, host="0.0.0.0", port=port)
