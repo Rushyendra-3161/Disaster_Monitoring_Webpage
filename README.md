@@ -1,5 +1,10 @@
 # Disaster Response Coordination Hub
 
+![Python](https://img.shields.io/badge/Python-3.9%2B-blue.svg)
+![FastAPI](https://img.shields.io/badge/FastAPI-0.100%2B-green.svg)
+![Folium](https://img.shields.io/badge/Folium-0.15%2B-lightgrey.svg)
+![License](https://img.shields.io/badge/License-MIT-yellow.svg)
+
 **A real-time wildfire and disaster monitoring platform powered by NASA FIRMS satellite data and interactive maps.**
 
 ---
@@ -22,6 +27,7 @@ This project integrates NASA FIRMS (Fire Information for Resource Management Sys
   * Computes fire statistics (high/medium/low confidence, brightness)
   * Provides REST API endpoints
 * **`index_map.html`**: Example of a generated interactive map with fire markers and statistics overlay.
+* **`requirements.txt`**: Python dependencies to run the project.
 
 ---
 
@@ -63,22 +69,30 @@ This project integrates NASA FIRMS (Fire Information for Resource Management Sys
    cd disaster-response-hub
    ```
 
-2. Install dependencies:
+2. Create and activate a virtual environment (optional but recommended):
 
    ```bash
-   pip install fastapi uvicorn pandas folium
+   python -m venv venv
+   source venv/bin/activate   # Linux / macOS
+   venv\Scripts\activate      # Windows
    ```
 
-3. Run the FastAPI app:
+3. Install dependencies:
 
    ```bash
-   uvicorn app:app --reload --port 5476
+   pip install -r requirements.txt
    ```
 
-4. Open in browser:
+4. Run the FastAPI app:
 
-   * Statistics → [http://127.0.0.1:5476/fires/stats](http://127.0.0.1:5476/fires/stats)
-   * Map → [http://127.0.0.1:5476/fires/map](http://127.0.0.1:5476/fires/map)
+   ```bash
+   uvicorn app:app --reload --port 5000
+   ```
+
+5. Open in browser:
+
+   * Statistics → [http://127.0.0.1:5476/fires/stats](http://127.0.0.1:5000/fires/stats)
+   * Map → [http://127.0.0.1:5476/fires/map](http://127.0.0.1:5000/fires/map)
 
 ---
 
@@ -95,7 +109,6 @@ This project integrates NASA FIRMS (Fire Information for Resource Management Sys
 * `COUNTRY`: Region of interest
 * `DAYS`: Number of past days to fetch fire data
 * `SATELLITE`: Satellite source
-* Bounding Box
 
 ---
 
@@ -105,6 +118,12 @@ This project integrates NASA FIRMS (Fire Information for Resource Management Sys
 * Add real-time alerts for new fire detections.
 * Volunteer and resource coordination features.
 * Integration with route planning for disaster response.
+
+---
+
+## License
+
+This project is licensed under the MIT License. See the `LICENSE` file for details.
 
 ---
 
