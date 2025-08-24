@@ -143,7 +143,3 @@ def get_fire_data(days: int = Query(DAYS, ge=1, le=10)):
     result, _ = make_map(df)
     return JSONResponse(content=result)
 
-if __name__ == "__main__":
-    import uvicorn
-    port = int(os.getenv("PORT", 5000))
-    uvicorn.run(app, host="0.0.0.0", port=port)
