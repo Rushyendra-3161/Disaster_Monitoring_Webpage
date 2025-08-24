@@ -91,8 +91,8 @@ This project integrates NASA FIRMS (Fire Information for Resource Management Sys
 
 5. Open in browser:
 
-   * Statistics → [http://127.0.0.1:5476/fires/stats](http://127.0.0.1:5000/fires/stats)
-   * Map → [http://127.0.0.1:5476/fires/map](http://127.0.0.1:5000/fires/map)
+   * Statistics → [http://127.0.0.1:5000/fires/stats](http://127.0.0.1:5000/fires/stats)
+   * Map → [http://127.0.0.1:5000/fires/map](http://127.0.0.1:5000/fires/map)
 
 ---
 
