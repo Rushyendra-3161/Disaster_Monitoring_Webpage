@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_d96729aafd51d70ef09a6bd1415f93c8 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+
+            <style>html, body {
+                width: 100%;
+                height: 100%;
+                margin: 0;
+                padding: 0;
+            }
+            </style>
+
+            <style>#map {
+                position:absolute;
+                top:0;
+                bottom:0;
+                right:0;
+                left:0;
+                }
+            </style>
+
+            <script>
+                L_NO_TOUCH = false;
+                L_DISABLE_3D = false;
+            </script>
+
+        
+</head>
+<body>
+    
+    
+    <div style='background:white;padding:12px 14px;border-radius:12px;
+        box-shadow:0 4px 10px rgba(0,0,0,.15);font-size:13px;position:fixed;top:80px;right:12px;z-index:1000;'>
+    <div style='font-weight:700;margin-bottom:6px;'> Fire Statistics</div>
+    <div>Total Fires: <b>2</b></div>
+    <div>High Confidence: <b>1</b></div>
+    <div>Medium Confidence: <b>1</b></div>
+    <div>Low Confidence: <b>0</b></div>
+    <div>Avg Brightness: <b>300.0K</b></div>
+    <div>Last Updated: <b>2025-08-24 12:35:26</b></div>
+    </div>
+    
+    <h3 style='position:fixed;left:12px;top:12px;z-index:1000;background:white;padding:6px 10px;border-radius:8px;box-shadow:0 2px 6px rgba(0,0,0,.2);margin:0;font:16px/1.2 system-ui'>NASA FIRMS – India | Aqua | last 1 day(s)</h3>
+    
+            <div class="folium-map" id="map_d96729aafd51d70ef09a6bd1415f93c8" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_d96729aafd51d70ef09a6bd1415f93c8 = L.map(
+                "map_d96729aafd51d70ef09a6bd1415f93c8",
+                {
+                    center: [12.9716, 77.5946],
+                    crs: L.CRS.EPSG3857,
+                    ...{
+  "zoom": 5,
+  "zoomControl": true,
+  "preferCanvas": false,
+}
+
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_fa5a146f111c563853cbab04bc12b1ba = L.tileLayer(
+                "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {
+  "minZoom": 0,
+  "maxZoom": 19,
+  "maxNativeZoom": 19,
+  "noWrap": false,
+  "attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors",
+  "subdomains": "abc",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_fa5a146f111c563853cbab04bc12b1ba.addTo(map_d96729aafd51d70ef09a6bd1415f93c8);
+        
+    
+            var circle_marker_b92f1cbd2f3c8fff464759f2aa1c54a8 = L.circleMarker(
+                [12.9716, 77.5946],
+                {"bubblingMouseEvents": true, "color": "#ffffff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ff0000", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8.0, "stroke": true, "weight": 2}
+            ).addTo(map_d96729aafd51d70ef09a6bd1415f93c8);
+        
+    
+        var popup_0fa69e946c7ed1796832351d0d79d411 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_e5b13f66ae93a2d118c70427894aad8e = $(`<div id="html_e5b13f66ae93a2d118c70427894aad8e" style="width: 100.0%; height: 100.0%;">         <div style='font-size:13px;max-width:260px;'>         <h4 style='margin:0 0 6px 0;color:#ff5555;'> Fire Detection</h4>         <div><b> Location:</b> 12.972, 77.595</div>         <div><b> Confidence:</b> 80% (High)</div>         <div><b> Brightness:</b> 320K</div>         <div><b> Date:</b> 2025-08-23 1230</div>         <div><b> Satellite:</b> Aqua</div>         <div><b> Fire Power:</b> 10.5 MW</div>         </div>         </div>`)[0];
+                popup_0fa69e946c7ed1796832351d0d79d411.setContent(html_e5b13f66ae93a2d118c70427894aad8e);
+            
+        
+
+        circle_marker_b92f1cbd2f3c8fff464759f2aa1c54a8.bindPopup(popup_0fa69e946c7ed1796832351d0d79d411)
+        ;
+
+        
+    
+    
+            var circle_marker_afc7778ffc5b756a66f84f5467e01d39 = L.circleMarker(
+                [13.0827, 80.2707],
+                {"bubblingMouseEvents": true, "color": "#ffffff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ffa500", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7.0, "stroke": true, "weight": 2}
+            ).addTo(map_d96729aafd51d70ef09a6bd1415f93c8);
+        
+    
+        var popup_58a226a265a46f5ef9d28fed5ee0af36 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_1e64e325e04485f7970d38da2e908ed2 = $(`<div id="html_1e64e325e04485f7970d38da2e908ed2" style="width: 100.0%; height: 100.0%;">         <div style='font-size:13px;max-width:260px;'>         <h4 style='margin:0 0 6px 0;color:#ff5555;'> Fire Detection</h4>         <div><b> Location:</b> 13.083, 80.271</div>         <div><b> Confidence:</b> 55% (Medium)</div>         <div><b> Brightness:</b> 280K</div>         <div><b> Date:</b> 2025-08-23 1315</div>         <div><b> Satellite:</b> Aqua</div>         <div><b> Fire Power:</b> 7.8 MW</div>         </div>         </div>`)[0];
+                popup_58a226a265a46f5ef9d28fed5ee0af36.setContent(html_1e64e325e04485f7970d38da2e908ed2);
+            
+        
+
+        circle_marker_afc7778ffc5b756a66f84f5467e01d39.bindPopup(popup_58a226a265a46f5ef9d28fed5ee0af36)
+        ;
+
+        
+    
+</script>
+</html>
