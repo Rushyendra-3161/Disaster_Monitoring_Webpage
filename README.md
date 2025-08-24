@@ -86,7 +86,7 @@ This project integrates NASA FIRMS (Fire Information for Resource Management Sys
 4. Run the FastAPI app:
 
    ```bash
-   uvicorn app:app --reload --port 5000
+   PORT=5000 uvicorn app:app --host 0.0.0.0 --port $PORT
    ```
 
 5. Open in browser:
